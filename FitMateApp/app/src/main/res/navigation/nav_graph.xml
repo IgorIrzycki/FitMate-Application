@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hubFragment">
+
+    <fragment
+        android:id="@+id/mealFragment"
+        android:name="com.wat.edu.fitmateapp.Fragments.MealFragment"
+        android:label="fragment_meal"
+        tools:layout="@layout/fragment_meal">
+        <action
+            android:id="@+id/action_mealFragment_to_searchMealFragment"
+            app:destination="@id/searchMealFragment">
+            <argument
+                android:name="selectedDate"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/searchMealFragment"
+        android:name="com.wat.edu.fitmateapp.Fragments.SearchMealFragment"
+        android:label="fragment_search_meal"
+        tools:layout="@layout/fragment_search_meal">
+        <action
+            android:id="@+id/action_searchMealFragment_to_hubFragment"
+            app:destination="@id/hubFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hubFragment"
+        android:name="com.wat.edu.fitmateapp.Fragments.HubFragment"
+        android:label="fragment_hub"
+        tools:layout="@layout/fragment_hub">
+        <action
+            android:id="@+id/action_hubFragment_to_mealFragment"
+            app:destination="@id/mealFragment" />
+        <action
+            android:id="@+id/action_hubFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_hubFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.wat.edu.fitmateapp.Fragments.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="com.wat.edu.fitmateapp.Fragments.ActivityFragment"
+        android:label="fragment_activity"
+        tools:layout="@layout/fragment_activity">
+        <action
+            android:id="@+id/action_activityFragment_to_hubFragment"
+            app:destination="@id/hubFragment" />
+    </fragment>
+</navigation>
